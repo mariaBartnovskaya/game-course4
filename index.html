@@ -11,7 +11,35 @@
 
 <body>
     <div class="container"></div>
-    <script src="script.js"></script>
+    const container = document.querySelector('.container');
+
+    window.application = {
+    blocks: {},
+    screens: {},
+    timers: [],
+    renderScreen: function (screenName) {
+
+    if (window.application.screens[screenName]) {
+    container.innerHTML = '';
+    window.application.screens[screenName]();
+
+    } else {
+    console.log('Такого экрана не существует');
+    }
+    },
+
+    renderBlock: function (blockName, container) {
+    if (window.application.blocks[blockName]) {
+    window.application.blocks[blockName](container);
+
+    } else {
+    console.log('Такого блока не существует');
+    }
+    },
+    };
+
+    <script src="levels.js"></script>
+    
 </body>
 
 </html>

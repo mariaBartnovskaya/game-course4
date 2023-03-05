@@ -37,11 +37,12 @@ font-weight: 400;
 font-size: 40px;
 line-height: 48px;
 color: #004980;
+margin: 0px;
 }
 .level_div-one{
     background: white;
     width: 97px;
-height: 98px;
+
 font-style: normal;
 font-weight: 400;
 font-size: 64px;
@@ -49,6 +50,9 @@ line-height: 72px;
 color: #0080C1;
 text-align: center;
 align-items: center;
+padding-top: 12px;
+    padding-bottom: 12px;
+
 }
 .level__div{
     display: flex;
