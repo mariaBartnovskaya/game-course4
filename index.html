@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="container"></div>
+    const container = document.querySelector('.container');
+
+    window.application = {
+    blocks: {},
+    screens: {},
+    timers: [],
+    renderScreen: function (screenName) {
+
+    if (window.application.screens[screenName]) {
+    container.innerHTML = '';
+    window.application.screens[screenName]();
+
+    } else {
+    console.log('Такого экрана не существует');
+    }
+    },
+
+    renderBlock: function (blockName, container) {
+    if (window.application.blocks[blockName]) {
+    window.application.blocks[blockName](container);
+
+    } else {
+    console.log('Такого блока не существует');
+    }
+    },
+    };
+
+    <script src="levels.js"></script>
     
 </body>
+
 </html>
