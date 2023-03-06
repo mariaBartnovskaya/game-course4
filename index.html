@@ -11,35 +11,39 @@
 
 <body>
     <div class="container"></div>
-    const container = document.querySelector('.container');
+    <script>
+        const container = document.querySelector('.container');
 
-    window.application = {
-    blocks: {},
-    screens: {},
-    timers: [],
-    renderScreen: function (screenName) {
+        window.application = {
+            blocks: {},
+            screens: {},
+            timers: [],
+            levels: {},
+            renderScreen: function (screenName) {
 
-    if (window.application.screens[screenName]) {
-    container.innerHTML = '';
-    window.application.screens[screenName]();
+                if (window.application.screens[screenName]) {
+                    container.innerHTML = '';
+                    window.application.screens[screenName]();
 
-    } else {
-    console.log('Такого экрана не существует');
-    }
-    },
+                } else {
+                    console.log('Такого экрана не существует');
+                }
+            },
 
-    renderBlock: function (blockName, container) {
-    if (window.application.blocks[blockName]) {
-    window.application.blocks[blockName](container);
+            renderBlock: function (blockName, container) {
+                if (window.application.blocks[blockName]) {
+                    window.application.blocks[blockName](container);
 
-    } else {
-    console.log('Такого блока не существует');
-    }
-    },
-    };
+                } else {
+                    console.log('Такого блока не существует');
+                }
+            },
+        };
+    </script>
+
 
     <script src="levels.js"></script>
-    
+
 </body>
 
 </html>
